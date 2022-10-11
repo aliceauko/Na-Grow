@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, UseHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const styles = {
   display: "inline-block",
@@ -12,7 +12,7 @@ const styles = {
 };
 
 function NavBar({ setUser, user }) {
-  const history = UseHistory();
+  const navigate = useNavigate();
 
   function handleLogout() {
     fetch("/logout", {
@@ -20,7 +20,7 @@ function NavBar({ setUser, user }) {
     }).then((r) => {
       if (r.ok) {
         setUser(null);
-        history.push("/");
+        navigate("/");
       }
     });
   }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Route, Switch} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 import NewPlant from "./NewPlant";
@@ -51,12 +51,10 @@ function App() {
     setPlants(updatedPlants)
 }
 
-
-
-  return (
+return (
     (<div>
       <NavBar setUser={setUser} user={user}/>
-      <Switch>
+      <Routes>
         <Route path="/new">
           <NewPlant user={user} plants={plants} onChangePlants={setPlants} types={types}/>
         </Route>
@@ -69,7 +67,7 @@ function App() {
         <Route path="/">
           <Home plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant} types={types}/>
         </Route>
-      </Switch>
+      </Routes>
   </div>)
    
   );

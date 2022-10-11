@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Route, useRouteMatch, Switch} from "react-router-dom"
+import {Link, Route, useMatch, Routes} from "react-router-dom"
 import PlantList from './PlantList'
 
 function Home({plants, onDeletePlant, onUpdatePlant, types}) {
@@ -10,13 +10,13 @@ function Home({plants, onDeletePlant, onUpdatePlant, types}) {
         </li>
         ));
 
-    let {path} = useRouteMatch()
+    let {path} = useMatch()
 
   return (
     <div  display="flex">
             <ul>{typeList}</ul>
             
-            <Switch>
+            <Routes>
                 <Route exact path={path}>
                     <PlantList 
                         plants={plants} 
@@ -26,14 +26,14 @@ function Home({plants, onDeletePlant, onUpdatePlant, types}) {
                     />
                 </Route>
                 <Route path={`/types/plants/:typeId`}>
-                    <PlantListList 
+                    <PlantList
                         plants={plants} 
                         onDeletePlant={onDeletePlant}
                         onUpdatePlant={onUpdatePlant}
                         edit={false}
                     />
                 </Route>
-            </Switch>
+            </Routes>
         </div>
   )
 }

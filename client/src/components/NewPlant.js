@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import Filter from './Filter';
 
 const style = {
@@ -23,7 +23,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
     const [formData, setFormData]=useState(defaultForm)
     const [typeId, setTypeId]=useState(1)
     const [errors, setErrors] = useState([])
-    const history = useHistory();
+    const navigate = useNavigate();
 
 
     function handleAddPlant(newPlant) {
@@ -51,7 +51,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
         .then(r=>{
           if(r.ok){
               r.json().then((a)=>handleAddPlant(a))
-              history.push("/mylist");
+              navigate("/mylist");
           }else{r.json().then((e)=>setErrors(e.errors))}
         })
     }
