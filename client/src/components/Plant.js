@@ -26,7 +26,7 @@ function Plant({plant, onDeletePlant, onUpdatePlant, edit}) {
 
     function handleChange(e){
         const key = e.target.name
-        const value = = (key === "name" || key === "image_url") ? e.target.value : parseInt(e.target.value)
+        const value = (key === "name" || key === "image_url") ? e.target.value : parseInt(e.target.value)
         setFormData({
           ...formData,
           [key]:value
