@@ -14,4 +14,4 @@ types = Type.create([{ name: 'Flowering', description: 'Plants that produce flow
                      { name: 'Trailing', description: 'Plants that have long twigs, branches or leaves that twirl other palnts.' },
                      { name: 'Succulents and cacti', description: 'Plants that require little water to grow.' }])
 
-.
+
