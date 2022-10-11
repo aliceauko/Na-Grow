@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 import NewPlant from "./NewPlant";
 import MyList from "./MyList";
-import Home from "./Home";
+// import Home from "./Home";
  
 function App() {
   const [user, setUser] = useState(null)
@@ -55,18 +55,10 @@ return (
     (<div>
       <NavBar setUser={setUser} user={user}/>
       <Routes>
-        <Route path="/new">
-          <NewPlant user={user} plants={plants} onChangePlants={setPlants} types={types}/>
-        </Route>
-        <Route path="/mylist">
-          <MyList user={user} plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant}/>
-        </Route>
-        <Route path="/login">
-          {user?<h1>Welcome! {user.username}</h1>:<LoginPage onSignIn={setUser}/>}
-        </Route>
-        <Route path="/">
-          <Home plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant} types={types}/>
-        </Route>
+        <Route path="/new" element= {<NewPlant user={user} plants={plants} onChangePlants={setPlants} types={types}/>}/>
+        <Route path="/mylist" element= {<MyList user={user} plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant}/>}/>
+        <Route path="/login" element= {user?<h1>Welcome! {user.username}</h1>:<LoginPage onSignIn={setUser}/>}/>
+        {/* <Route path="/" element= {<Home plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant} types={types}/>}/> */}
       </Routes>
   </div>)
    
