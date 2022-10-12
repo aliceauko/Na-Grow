@@ -74,9 +74,9 @@ function NewPlant({user, plants, onChangePlants, types}) {
         <textarea type="text" name="image_url" value={formData.image_url} onChange={handleChange}/>
         <button type="submit">Save</button>
       </form>
-      {/* {errors.map((err) => (
+      {errors.map((err) => (
               <p key={err}>{err}</p>
-      ))} */}
+      ))}
     </div>
   )
 }
