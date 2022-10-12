@@ -10,14 +10,14 @@ function Home({plants, onDeletePlant, onUpdatePlant, types}) {
         </li>
         ));
 
-    let {path} = useMatch('');
+    let {path} = useMatch('/');
 
   return (
     <div  display="flex">
             <ul>{typeList}</ul>
             
             <Routes>
-                <Route exact path={path} element= {<PlantList 
+                <Route index path={path} element= {<PlantList 
                         plants={plants} 
                         onDeletePlant={onDeletePlant}
                         onUpdatePlant={onUpdatePlant}
