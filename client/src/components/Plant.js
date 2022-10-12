@@ -84,12 +84,12 @@ function Plant({plant, onDeletePlant, onUpdatePlant, edit}) {
     </form> ):
     (<div>
         <h2>{name}</h2>
-        <p>{description}</p>
         <img src={image_url} alt="plant" style={style}/>
-    </div>)};
+        <p>{description}</p>
+    </div>)}
 
-    {edit?<button id='update' onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>update</button>:null}
-            {edit?<button id='delete' onClick={e=>handleDelete(plant.id)}>delete</button>:null}
+    {edit?<button id='update' onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Update</button>:null}
+            {edit?<button id='delete' onClick={e=>handleDelete(plant.id)}>Delete</button>:null}
             {edit?null:<button id='detail' onClick={e=>handleDetail(plant.id)}>See detail</button>}
             {detail?<div>
                         <p>roommate age: {user.age}</p>

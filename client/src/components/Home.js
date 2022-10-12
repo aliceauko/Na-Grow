@@ -1,41 +1,37 @@
-// import React from 'react'
-// import {Link, Route, useRouteMatch, Routes} from "react-router-dom"
-// import PlantList from './PlantList'
+import React from 'react'
+import {Link, Route, useMatch, Routes} from "react-router-dom"
+import PlantList from './PlantList'
 
-// function Home({plants, onDeletePlant, onUpdatePlant, types}) {
+function Home({plants, onDeletePlant, onUpdatePlant, types}) {
 
-//     const typeList = types.map(({id, name}) => (
-//         <li key={id}>
-//             <Link to={`/types/plants/${id}`}>{name}</Link>
-//         </li>
-//         ));
+    const typeList = types.map(({id, name}) => (
+        <li key={id}>
+            <Link to={`/types/plants/${id}`}>{name}</Link>
+        </li>
+        ));
 
-//     let {path} = useRouteMatch();
+    let {path} = useMatch('');
 
-//   return (
-//     <div  display="flex">
-//             <ul>{typeList}</ul>
+  return (
+    <div  display="flex">
+            <ul>{typeList}</ul>
             
-//             <Routes>
-//                 <Route exact path={path}>
-//                     <PlantList 
-//                         plants={plants} 
-//                         onDeletePlant={onDeletePlant}
-//                         onUpdatePlant={onUpdatePlant}
-//                         edit={false}
-//                     />
-//                 </Route>
-//                 <Route path={`/types/plants/:typeId`}>
-//                     <PlantList
-//                         plants={plants} 
-//                         onDeletePlant={onDeletePlant}
-//                         onUpdatePlant={onUpdatePlant}
-//                         edit={false}
-//                     />
-//                 </Route>
-//             </Routes>
-//         </div>
-//   )
-// }
+            <Routes>
+                <Route exact path={path} element= {<PlantList 
+                        plants={plants} 
+                        onDeletePlant={onDeletePlant}
+                        onUpdatePlant={onUpdatePlant}
+                        edit={false}
+                    />}/>
+                <Route path={`/types/plants/:typeId`} element= {<PlantList
+                        plants={plants} 
+                        onDeletePlant={onDeletePlant}
+                        onUpdatePlant={onUpdatePlant}
+                        edit={false}
+                    />}/>
+            </Routes>
+        </div>
+  )
+}
 
-// export default Home
+export default Home

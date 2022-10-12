@@ -1,10 +1,11 @@
+
 import React, {useEffect, useState} from "react";
 import {Route, Routes} from 'react-router-dom'
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 import NewPlant from "./NewPlant";
 import MyList from "./MyList";
-// import Home from "./Home";
+import Home from "./Home";
  
 function App() {
   const [user, setUser] = useState(null)
@@ -58,7 +59,7 @@ return (
         <Route path="/new" element= {<NewPlant user={user} plants={plants} onChangePlants={setPlants} types={types}/>}/>
         <Route path="/mylist" element= {<MyList user={user} plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant}/>}/>
         <Route path="/login" element= {user?<h1>Welcome! {user.username}</h1>:<LoginPage onSignIn={setUser}/>}/>
-        {/* <Route path="/" element= {<Home plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant} types={types}/>}/> */}
+        <Route path="/" element= {<Home plants={plants} onDeletePlant={handleDeletePlant} onUpdatePlant={handleUpdatePlant} types={types}/>}/>
       </Routes>
   </div>)
    
