@@ -3,13 +3,11 @@ import {useNavigate} from 'react-router-dom'
 import Filter from './Filter';
 
 const style = {
-    display: "inline-block",
-    width: "200px",
-    padding: "20px",
-    margin: "0 10px 10px",
-    color: "black",
-    fontSize: "20px",
-    boxSizing: "border-box"
+    backgroundImage: 
+"url('https://previews.123rf.com/images/milkos/milkos1903/milkos190301744/119497167-home-plants-in-flowerpots-composition-at-white-brick-wall-background-minimalistic-decor-concept-copy.jpg')",
+  height:'500px',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
   };
 
 
@@ -62,7 +60,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
 
   return (
     !user?<h1>Please log in to post your plant!</h1>:
-    <div >
+    <div style={style} >
       <h3>Share some plant information</h3>
       <Filter onChangeId={setTypeId} types={types}/>
       <form className="NewItem" onSubmit={handleSubmit} style={style}>
@@ -72,7 +70,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
         <textarea type="text" name="description" value={formData.description} onChange={handleChange}/>
         <label>image url:</label>
         <textarea type="text" name="image_url" value={formData.image_url} onChange={handleChange}/>
-        <button type="submit">Save</button>
+        <button  className ="btn"type="submit">Save</button>
       </form>
       {errors.map((err) => (
               <p key={err}>{err}</p>

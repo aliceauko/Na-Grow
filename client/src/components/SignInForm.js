@@ -1,7 +1,18 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
+const style={
+  backgroundImage: 
+"url('https://previews.123rf.com/images/milkos/milkos1903/milkos190301744/119497167-home-plants-in-flowerpots-composition-at-white-brick-wall-background-minimalistic-decor-concept-copy.jpg')",
+  height:'100vh',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',}
+
+
+
 function SignInForm({onSignIn}) {
+
+  
 
   const defaultForm = {    
     username:"",
@@ -41,7 +52,7 @@ function handleSubmit(e){
       })
 }
   return (
-    <div>
+    <div style={style}>
        <form className="Login" onSubmit={handleSubmit}>
           <h1>Na-grow</h1>
           <h3>Log in to your account</h3>
@@ -49,7 +60,7 @@ function handleSubmit(e){
           <input type="text" name="username" value={formData.username} onChange={handleChange}/>
           <label>password:</label>
           <input type="text" name="password" value={formData.password} onChange={handleChange}/>
-          <button type="submit">Submit</button>
+          <button  className ="btn" type="submit">Submit</button>
         </form>
         {errors.map((err) => (
           <p key={err}>{err}</p>

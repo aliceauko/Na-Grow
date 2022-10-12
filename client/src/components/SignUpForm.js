@@ -1,6 +1,14 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
+const style={
+  backgroundImage: 
+"url('https://previews.123rf.com/images/milkos/milkos1903/milkos190301744/119497167-home-plants-in-flowerpots-composition-at-white-brick-wall-background-minimalistic-decor-concept-copy.jpg')",
+  height:'500px',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',}
+
+
 function SignUpForm({onSignIn}) {
   const defaultForm = {
     username:"",
@@ -48,7 +56,7 @@ function handleSubmit(e){
 
 
   return (
-    <div>
+    <div style={style}>
        <form className="Login" onSubmit={handleSubmit}>
           <h1>Na-Grow</h1>
           <h3>Create your Na-Grow account</h3>
@@ -64,7 +72,7 @@ function handleSubmit(e){
           <input type="text" name="occupation" value={formData.occupation} onChange={handleChange}/>
           <label>interest: </label>
           <textarea type="text" name="interest" value={formData.interest} onChange={handleChange}/>
-          <button type="submit">Submit</button>
+          <button   className ="btn" type="submit">Submit</button>
         </form>
         {errors.map((err) => (
           <p key={err}>{err}</p>

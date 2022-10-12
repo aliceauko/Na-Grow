@@ -6,9 +6,9 @@ const styles = {
   width: "200px",
   padding: "10px",
   margin: "0 10px 10px",
-  background: "blue",
   color: "white",
   fontSize: "20px",
+  
 };
 
 function NavBar({ setUser, user }) {
@@ -26,52 +26,36 @@ function NavBar({ setUser, user }) {
   }
 
   return (
-    <div>
-      <NavLink
+    <div className="navi">
+      <NavLink className= 'navs'
         to="/"
         exact
         style={styles}
-        activeStyle={{
-          background: "pink",
-          color: "black",
-        }}
       >
         Home
       </NavLink>
-      <NavLink
+      <NavLink className= 'navs'
         to="/new"
         exact
         style={styles}
-        activeStyle={{
-          background: "pink",
-          color: "black",
-        }}
       >
         Add New Plant
       </NavLink>
-      <NavLink
+      <NavLink className= 'navs'
         to="/mylist"
         exact
         style={styles}
-        activeStyle={{
-          background: "pink",
-          color: "black",
-        }}
       >
         My List
       </NavLink>
-      <NavLink
+      <NavLink className= 'navs'
         to="/login"
         exact
         style={styles}
-        activeStyle={{
-          background: "pink",
-          color: "black",
-        }}
       >
         {user ? `Hi! ${user.username}` : "Login"}
       </NavLink>
-      <button onClick={handleLogout}>Logout</button>
+      <button  className ="btn" onClick={handleLogout}>Logout</button>
     </div>
   );
 }

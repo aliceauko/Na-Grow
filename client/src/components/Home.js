@@ -2,6 +2,8 @@ import React from 'react'
 import {Link, Route, useMatch, Routes} from "react-router-dom"
 import PlantList from './PlantList'
 
+
+
 function Home({plants, onDeletePlant, onUpdatePlant, types}) {
 
     const typeList = types.map(({id, name}) => (
