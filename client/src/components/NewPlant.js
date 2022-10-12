@@ -33,7 +33,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
 
     function handleChange(e){
         const key = e.target.name
-        const value = (key === "name" || key === "image_url") ? e.target.value : parseInt(e.target.value)
+        const value = (key === "name" || key === "description" || key === "image_url" ) ? e.target.value : parseInt(e.target.value)
         setFormData({
           ...formData,
           [key]:value,
@@ -69,7 +69,7 @@ function NewPlant({user, plants, onChangePlants, types}) {
         <label>name:</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange}/>
         <label>description:</label>
-        <input type="text" name="description" value={formData.description} onChange={handleChange}/>
+        <textarea type="text" name="description" value={formData.description} onChange={handleChange}/>
         <label>image url:</label>
         <textarea type="text" name="image_url" value={formData.image_url} onChange={handleChange}/>
         <button type="submit">Save</button>

@@ -12,21 +12,22 @@ const style = {
 
 
 function Plant({plant, onDeletePlant, onUpdatePlant, edit}) {
-    const {name, image_url, description, user} = plant
+    const {name, description, image_url, user} = plant
     const [isUpdating, setIsUpdating] = useState(false);
     const [detail, setDetail] = useState(false);
     const [error, setError] = useState([])
     const defaultForm = {    
         name: name,
-        image_url: image_url,
-        description: description
+        description: description,
+        image_url: image_url
+       
       }
     
     const [formData, setFormData]=useState(defaultForm)
 
     function handleChange(e){
         const key = e.target.name
-        const value = (key === "name" || key === "image_url") ? e.target.value : parseInt(e.target.value)
+        const value = (key === "name" || key === "description"|| key === "image_url" ) ? e.target.value : parseInt(e.target.value)
         setFormData({
           ...formData,
           [key]:value
@@ -74,15 +75,16 @@ function Plant({plant, onDeletePlant, onUpdatePlant, edit}) {
         (<form className="UpdateItem" onSubmit={handleSubmit} >
         <label>name:</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-        <label>image url:</label>
-        <input type="text" name="image_url" value={formData.image_url} onChange={handleChange}/>
         <label>description:</label>
         <input type="text" name="description" value={formData.description} onChange={handleChange}/>
+        <label>image url:</label>
+        <input type="text" name="image_url" value={formData.image_url} onChange={handleChange}/>
+        
         <button type="submit">Save</button>
     </form> ):
     (<div>
         <h2>{name}</h2>
-        {edit?<p>description: {description}</p>:null}
+        <p>{description}</p>
         <img src={image_url} alt="plant" style={style}/>
     </div>)};
 
@@ -90,7 +92,6 @@ function Plant({plant, onDeletePlant, onUpdatePlant, edit}) {
             {edit?<button id='delete' onClick={e=>handleDelete(plant.id)}>delete</button>:null}
             {edit?null:<button id='detail' onClick={e=>handleDetail(plant.id)}>See detail</button>}
             {detail?<div>
-                        <p>Description of plant care: {description}</p>
                         <p>roommate age: {user.age}</p>
                         <p>roommate occupation: {user.occupation}</p>
                         <p>roommate interest: {user.interest}</p>
