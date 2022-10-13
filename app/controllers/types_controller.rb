@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+    skip_before_action :authorize
 
     def create
         type = Type.create(params)
