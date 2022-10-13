@@ -1,6 +1,7 @@
 class PlantsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     skip_before_action :authorize, only: [:index, :show]
+    protect_from_forgery with: :null_session
 
     def index
         plants = Plant.all
