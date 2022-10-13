@@ -25,7 +25,7 @@ function Home({plants, onDeletePlant, onUpdatePlant, types}) {
                         onUpdatePlant={onUpdatePlant}
                         edit={false}
                     />}/>
-                <Route index path='{`/types/plants/:typeId`}' element= {<PlantList
+                <Route  path='{`/types/plants/:typeId`}' element= {<PlantList
                         plants={plants} 
                         onDeletePlant={onDeletePlant}
                         onUpdatePlant={onUpdatePlant}

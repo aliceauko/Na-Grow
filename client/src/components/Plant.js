@@ -40,7 +40,7 @@ function Plant({ plant, onDeletePlant, onUpdatePlant, edit }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((a) => {
-          onUpdatePlant(a);
+          // onUpdatePlant(a);
           setIsUpdating(false);
         });
       } else {
@@ -106,7 +106,7 @@ function Plant({ plant, onDeletePlant, onUpdatePlant, edit }) {
             <h3>PLANT NAME: {name}</h3>
             <br></br>
             <p>
-              <span Style="color:green">Care description</span>: {description}
+              <span style={{color: "green"}}>Care description</span>: {description}
             </p>
           </div>
         </div>

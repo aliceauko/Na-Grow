@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :types, only: [:create, :index]
+  resources :types, only: [:create, :index ]
   resources :plants
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
