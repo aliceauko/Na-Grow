@@ -64,6 +64,11 @@ body {
   line-height: 37px;
 }
 
+.header{
+  line-height: 55px;
+  color: greenyellow;
+}
+
 .navi .navs {
   text-decoration: none;
 }

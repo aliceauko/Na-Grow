@@ -8,7 +8,6 @@ const styles = {
   margin: "0 10px 10px",
   color: "white",
   fontSize: "20px",
-  
 };
 
 function NavBar({ setUser, user }) {
@@ -27,35 +26,24 @@ function NavBar({ setUser, user }) {
 
   return (
     <div className="navi">
-      <NavLink className= 'navs'
-        to="/"
-        exact
-        style={styles}
-      >
+      <div className="header">
+        <h2>Na-grow</h2>
+      </div>
+      <NavLink className="navs" to="/" exact style={styles}>
         Home
       </NavLink>
-      <NavLink className= 'navs'
-        to="/new"
-        exact
-        style={styles}
-      >
+      <NavLink className="navs" to="/new" exact style={styles}>
         Add New Plant
       </NavLink>
-      <NavLink className= 'navs'
-        to="/mylist"
-        exact
-        style={styles}
-      >
+      <NavLink className="navs" to="/mylist" exact style={styles}>
         My List
       </NavLink>
-      <NavLink className= 'navs'
-        to="/login"
-        exact
-        style={styles}
-      >
+      <NavLink className="navs" to="/login" exact style={styles}>
         {user ? `Hi! ${user.username}` : "Login"}
       </NavLink>
-      <button  className ="btn" onClick={handleLogout}>Logout</button>
+      <button className="btn" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 }

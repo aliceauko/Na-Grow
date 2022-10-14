@@ -106,7 +106,8 @@ function Plant({ plant, onDeletePlant, onUpdatePlant, edit }) {
             <h3>PLANT NAME: {name}</h3>
             <br></br>
             <p>
-              <span style={{color: "green"}}>Care description</span>: {description}
+              <span style={{ color: "green" }}>Care description</span>:{" "}
+              {description}
             </p>
           </div>
         </div>
