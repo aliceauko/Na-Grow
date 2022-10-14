@@ -49,7 +49,7 @@ Getting:
  * Or you can access the web application directly via this [LINK.](https://na-grow.herokuapp.com)
 *****
 ## Video demo link
- * 
+ * [LINK.](https://drive.google.com/file/d/1_gTZEoipIoteJoEjaApuZgCHcF41i4dU/view)
 
 ## Technologies Used
 1. HTML
