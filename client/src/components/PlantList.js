@@ -1,14 +1,14 @@
 import React from 'react';
-import {useParams} from 'react-router-dom'
+// import {useParams} from 'react-router-dom'
 import Plant from './Plant';
 
 function PlantList({plants, onDeletePlant, onUpdatePLant, edit}) {
-    const {typeId} =useParams()
+    // const {typeId} =useParams()
     let displayPlants
-    if(typeId)
-    {displayPlants=plants.filter(a=>a.type_id===parseInt(typeId))}
-    else
-    {displayPlants=plants}
+    // if(typeId)
+    // {displayPlants=plants.filter(a=>a.type_id===parseInt(typeId))}
+    // else
+    displayPlants=plants
 
   return (
     displayPlants.length === 0 ? "No plant available yet" :

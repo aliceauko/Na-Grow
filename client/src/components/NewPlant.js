@@ -12,7 +12,7 @@ const style = {
 
 
 
-function NewPlant({user, plants, onChangePlants, types}) {
+function NewPlant({user, plants, onChangePlants}) {
     const defaultForm = {    
         name:"",
         description:"",
